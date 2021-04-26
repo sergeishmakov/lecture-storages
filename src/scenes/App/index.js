@@ -6,7 +6,7 @@ import {
   Redirect,
   useHistory,
 } from 'react-router-dom'
-import { findIndex, first, last } from 'lodash'
+import { findIndex } from 'lodash'
 import { SwitchTransition, CSSTransition } from 'react-transition-group'
 
 import SlideLayout from '../../layout/SlideLayout'
@@ -18,9 +18,6 @@ import {
   Header,
   Content,
   Link,
-  Controls,
-  PreviousButton,
-  NextButton,
   LinksWrapper,
   Wrapper,
   LeftShadow,
@@ -48,9 +45,6 @@ function App() {
   const location = useLocation()
   const history = useHistory()
   const ref = useRef(null)
-
-  const isFirst = location.pathname === first(links).path
-  const isLast = location.pathname === last(links).path
 
   const currentIndex = findIndex(
     links,
@@ -102,20 +96,6 @@ function App() {
               </div>
             </CSSTransition>
           </SwitchTransition>
-          {/* <Controls>
-            {isFirst ? (
-              <div />
-            ) : (
-              <PreviousButton onClick={handlePreviousButtonClick}>
-                Previous
-              </PreviousButton>
-            )}
-            {isLast ? (
-              <div />
-            ) : (
-              <NextButton onClick={handleNextButtonClick}>Next</NextButton>
-            )}
-          </Controls> */}
         </Content>
         <RightShadow onClick={handleNextButtonClick} />
       </Wrapper>
