@@ -71,9 +71,7 @@ export const Link = styled(NavLink).attrs({
 
 export const Wrapper = styled.div`
   display: flex;
-  height: calc(100vh - 60px);
   width: 100%;
-  overflow-y: auto;
 
   &::-webkit-scrollbar {
     width: 4px;
